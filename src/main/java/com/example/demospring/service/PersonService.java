@@ -18,8 +18,13 @@ public class PersonService {
     // chỗ này để đẩy phương thức từ interface vào trong method
     //     // cái này là thêm person cùng với id tự sinh
     public int addPerson(Person person) {
+        // cái này hình như nó phải qua fakePerson
         return personDao.insertPerson(person);
     }
+
+    public List<Person> getAllPeople (){
+        return personDao.selectAllPeople();
+    };
 }
 //public class PersonService implements PersonDao {
 //    @Override
