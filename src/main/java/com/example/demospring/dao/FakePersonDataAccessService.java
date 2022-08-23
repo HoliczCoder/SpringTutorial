@@ -26,14 +26,16 @@ private static List<Person> DB = new ArrayList<>();
     // trả hết thông tin người dùng
 
     @Override
-    public void deletePersonById(UUID id) {
+    public int deletePersonById(UUID id) {
+        return(0);
     }
     @Override
-    public void updatePersonById(UUID id) {
+    public int updatePersonById(UUID id) {
+        return(0);
     }
 
     @Override
     public Optional<Person> selectPersonById(UUID id) {
-        return Optional.empty();
+        return DB.stream().filter(person -> person.getId().equals(id)).findFirst();  // tim thang user by id dung stream
     }
 }
